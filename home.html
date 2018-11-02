@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Page Title</title>
+        <title>AgentX</title>
+        <script src="https://cdn.jsdelivr.net/gh/dusterthefirst/Login-With-Discord@1.5.0/dist/lwd.js"></script>
+        <script src="scripts.js"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
+
     <body>
-        <script>
-            alert("Hello, World")
-        </script>
+        <button onclick="login()" id="login">login</button>
+
+        <div id="loaded">
+            <div class="user">
+                <div class="udata">
+                    <img id="userpfp">
+                    <div class="uinfo">
+                        <div id="usertag"></div>
+                        <div class="extra">
+                            <span id="userid"></span>
+                            <span id="useremail"></span>
+                        </div>
+                        <button onclick="logout()" id="logout">logout</button>
+                    </div>
+                </div>
+            </div>
+            <div id="connections"></div>
+            <div id="guilds"></div>
+            <div id="guildinspector">
+                <div class="img"></div>
+                <div class="name"></div>
+            </div>
+        </div>
     </body>
 </html>
