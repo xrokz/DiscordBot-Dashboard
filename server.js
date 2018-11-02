@@ -35,9 +35,7 @@ app.get("/manage/:gld/:user", async (req, res) => {
   }
  
   });
-app.listen(port, () => {
-  console.info(`Running on port ${port}`);
-});
+
 async function getUser(token) {
   const myRes = await fetch("https://discordapp.com/api/users/@me",
          {
