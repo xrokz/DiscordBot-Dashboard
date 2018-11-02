@@ -28,8 +28,8 @@ let adminguilds = guilds. filter(guild => guild.permissions.has("MANAGE_GUILD") 
         child.classList.add("guild");
        
         child.innerHTML = guild.icon
-            ? `<a href="http://agentx.gq/manage/${guild.id}/${user.id}"><img title="${guild.name}" src="${guild.iconURL}"/></a>`
-            : `<div class="img"><a href="http://agentx.gq/manage/${guild.id}/${userid}"><span title="${guild.name}">${guild.name.split(" ").map(x => x[0]).join("")}</span></a></div>`;
+            ? `<a href="http://agentx.ga/manage/${guild.id}/${user.id}"><img title="${guild.name}" src="${guild.iconURL}"/></a>`
+            : `<div class="img"><a href="http://agentx.ga/manage/${guild.id}/${userid}"><span title="${guild.name}">${guild.name.split(" ").map(x => x[0]).join("")}</span></a></div>`;
         g.appendChild(child);
 }    
 };
