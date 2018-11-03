@@ -28,7 +28,7 @@ app.get("/manage/:gld/:user", async (req, res) => {
   let vuser = client.users.get(user)
   if(vguild && vuser) {
    let ug = vguild.members.get(user)
-  if(ug.permissions.has("MANAGE_GUILD") || ug.permissions.has("ADMINISTRATOR")) {
+  if(ug.hasPermission("MANAGE_GUILD") || ug.hasPermission("ADMINISTRATOR")) {
  res.render('manage', {user: user, guild: vguild, client: client});
  } else {
    res.redirect("/")
