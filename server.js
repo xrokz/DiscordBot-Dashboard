@@ -12,7 +12,7 @@ const app = express();
 
 app.set('view engine', 'ejs')
 
-const CLIENT_ID = process.env.CLIENT_ID; // your bot's ID
+const CLIENT_ID = process.env.CLIENT_ID; // your bot's ID !
 const CLIENT_SECRET = process.env. CLIENT_SECRET; // your bot's client secret   
 
 const redirect = encodeURIComponent('http://agentx.gq:5000/server/callback');
