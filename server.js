@@ -1,4 +1,4 @@
-const port = 80
+const port = process.env.PORT
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const express = require('express');
@@ -35,7 +35,7 @@ app.get("/manage/:gld/:user", async (req, res) => {
   }
  
   });
-
+app.listen(port)
 async function getUser(token) {
   const myRes = await fetch("https://discordapp.com/api/users/@me",
          {
