@@ -2,7 +2,7 @@ let discord = new LoginWithDiscord({
     cache: true,
     clientID: "474677697474330625",
     scopes: [
-        Scope.Identify, Scope.Connections, Scope.Email, Scope.Guilds
+        Scope.Identify, Scope.Connections, Scope.Guilds
     ]
 });
 let guilds;
@@ -19,7 +19,7 @@ let adminguilds = guilds. filter(guild => guild.permissions.has("MANAGE_GUILD") 
     document.getElementById("userpfp").src = user.avatarURL;
     document.getElementById("userid").innerHTML = user.id;
     document.getElementById("usertag").innerHTML = `<span class="username">${user.username}</span><span class="desc">${user.discriminator}</span>`;
-    document.getElementById("useremail").innerHTML = user.email;
+  //  document.getElementById("useremail").innerHTML = user.email;
    
     let g = document.getElementById("guilds");
     g.innerHTML = "";
