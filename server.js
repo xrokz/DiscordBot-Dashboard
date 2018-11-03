@@ -18,7 +18,7 @@ const CLIENT_SECRET = process.env. CLIENT_SECRET; // your bot's client secret
 const redirect = encodeURIComponent('http://agentx.gq:5000/server/callback');
 
 app.get("/", (req, res) => {
-res.sendFile("home.html")
+res.sendFile(path.join(__dirname, "home.html"));
 })
 
 app.get("/manage/:gld/:user", async (req, res) => {
