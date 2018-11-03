@@ -26,7 +26,8 @@ app.get("/manage/:gld/:user", async (req, res) => {
   let user = req.params.user;
   let vguild = client.guilds.get(guild);
   let vuser = client.users.get(user)
-  if(vguild && vuser) {
+  if(vuser) {
+  if(vguild) {
    let ug = vguild.members.get(user)
   if(ug.hasPermission("MANAGE_GUILD") || ug.hasPermission("ADMINISTRATOR")) {
  res.render('manage', {user: user, guild: vguild, client: client});
@@ -37,7 +38,9 @@ app.get("/manage/:gld/:user", async (req, res) => {
   } else {
   res.redirect(`https://discordapp.com/oauth2/authorize?client_id=${process.env.CLIENT_ID}&permissions=8&scope=bot`)
   }
- 
+  } else {
+  res.redirect("/")
+  }
   });
 app.listen(port)
 async function getUser(token) {
