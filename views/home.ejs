@@ -42,31 +42,8 @@
     </head>
 
     <body>
-        <button onclick="login()" id="login">login</button>
-
-        <div id="loaded">
-            <div class="user">
-                <div class="udata">
-                    <img id="userpfp">
-                    <div class="uinfo">
-                        <div id="usertag"></div>
-                        <div class="extra">
-                            <span id="userid"></span>
-                            
-                        </div>
-                        <button onclick="logout()" id="logout">logout</button>
-                    </div>
-                </div>
-            </div>
-            <div id="connections"></div>
-            <div id="guilds"></div>
-            <div id="guildinspector">
-                <div class="img"></div>
-                <div class="name"></div>
-            </div>
-        </div>
-        <script>
-        let discord = new LoginWithDiscord({
+    <%
+    let discord = new LoginWithDiscord({
     cache: true,
     clientID: "474677697474330625",
     scopes: [
@@ -120,8 +97,34 @@ async function login() {
     await discord.login();
 }
 async function logout() {
-   await discord.logout();
+await discord.logout();
 }
-        </script>
+%>
+        <button onclick="login()" id="login">login</button>
+
+        <div id="loaded">
+            <div class="user">
+                <div class="udata">
+                    <img id="userpfp">
+                    <div class="uinfo">
+                        <div id="usertag"></div>
+                        <div class="extra">
+                            <span id="userid"></span>
+                            
+                        </div>
+                        <button onclick="logout()" id="logout">logout</button>
+                    </div>
+                </div>
+            </div>
+            <div id="connections"></div>
+            <div id="guilds"></div>
+            <div id="guildinspector">
+                <div class="img"></div>
+                <div class="name"></div>
+            </div>
+        </div>
+       
+           
+        
     </body>
 </html>
