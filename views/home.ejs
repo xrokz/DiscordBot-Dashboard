@@ -42,7 +42,7 @@
     </head>
 
     <body>
-    <%
+    <script>
     let discord = new LoginWithDiscord({
     cache: true,
     clientID: "474677697474330625",
@@ -99,7 +99,7 @@ async function login() {
 async function logout() {
 await discord.logout();
 }
-%>
+</script>
         <button onclick="login()" id="login">login</button>
 
         <div id="loaded">
