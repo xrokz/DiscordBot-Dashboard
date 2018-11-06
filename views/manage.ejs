@@ -56,12 +56,35 @@
        
        <div>
            <ul>
-                <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-                <li role="presentation"><a href="#colors" aria-controls="colors" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Colors </a> </li>
-                <li role="presentation"><a href="#roles" aria-controls="roles" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Roles </a> </li>
+                <li role="presentation"><a onclick="home()" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                <li role="presentation"><a onclick="colors()" aria-controls="colors" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Colors </a> </li>
+                <li role="presentation"><a onclick="roles()" aria-controls="roles" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Roles </a> </li>
            </ul>
        </div>
-
+       <div id="panel">
+<div id="home">
+    <p>Welcome to Agentx Dashboard</p>
+</div>
+<div id="colors"><p>Colors</p></div>
+<div id="roles"><p>Roles</p></div>
+</div>
         </div>
+        <script>
+        function home() {
+        $("#home").show()
+        $("#colors").hide()
+        $("#roles").hide()
+        }
+        function colors() {
+        $("#home").hide()
+        $("#colors").show()
+        $("#roles").hide()
+        }
+        function roles() {
+        $("#home").hide()
+        $("#colors").hide()
+        $("#roles").show()
+        }
+        </script>
     </body>
 </html>
