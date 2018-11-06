@@ -32,16 +32,14 @@ app.get("/manage/:gld/:user", async (req, res) => {
    res.redirect(`https://discordapp.com/oauth2/authorize?client_id=${process.env.CLIENT_ID}&permissions=8&scope=bot`);
   } else {
   let ug = vguild.members.get(user)
-  if(ug) {
+
   if(ug.hasPermission("MANAGE_GUILD") || ug.hasPermission("ADMINISTRATOR")) {
  res.render('manage', {user: user, guild: vguild, client: client});
  } else {
    res.redirect("/")
 
 }
-  } else {
-       res.redirect("/")
-  }
+
   }
   
   });
