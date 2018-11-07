@@ -43,7 +43,7 @@ app.get("/manage/:gld/:user", async (req, res) => {
   }
   
   });
-app.get("manage/:gld/:user/colors", (req, res) => {
+app.get("/manage/:gld/:user/colors", (req, res) => {
 let guild = req.query.gld;
   let user = req.query.user;
     let vguild = client.guilds.get(guild);
