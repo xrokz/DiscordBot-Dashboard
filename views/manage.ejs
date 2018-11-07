@@ -19,63 +19,13 @@
         #colors{display: none;}
         #roles{display: none;}
         li {list-style-type: none;background-color: #000001;margin-bottom: 1%;width: 200px;display: inline-block;}
-         ul {
+         #header {
             background-color: black;
         }
-        li {
+        #header li {
             background-color: blue;
         }
     html,body{text-align:center;width:100%;height:100%;margin:0;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;background:#202225;color:#FFF;overflow:hidden}
-input[type=checkbox]{
-	height: 0;
-	width: 0;
-	visibility: hidden;
-}
-
-label {
-	cursor: pointer;
-	text-indent: -9999px;
-	width: 200px;
-	height: 100px;
-	background: grey;
-	display: block;
-	border-radius: 100px;
-	position: relative;
-}
-
-label:after {
-	content: '';
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	width: 90px;
-	height: 90px;
-	background: #fff;
-	border-radius: 90px;
-	transition: 0.3s;
-}
-
-input:checked + label {
-	background: #bada55;
-}
-
-input:checked + label:after {
-	left: calc(100% - 5px);
-	transform: translateX(-100%);
-}
-
-label:active:after {
-	width: 130px;
-}
-
-// centering
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-}
-
 </style>
       </head>
     <body>
@@ -84,7 +34,7 @@ body {
        <h1 style="margin-top:7%;"><%= guild.name %></h1>
        
        <div>
-           <ul>
+           <ul id="header">
                 <li role="presentation"><a onclick="home()" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
                 <li role="presentation"><a onclick="colors()" aria-controls="colors" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Colors </a> </li>
                 <li role="presentation"><a onclick="roles()" aria-controls="roles" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Roles </a> </li>
@@ -97,9 +47,13 @@ body {
 <div id="colors">
 <h1>Colors</h1>
 <form action="/<%= guild.id %>/<%= user.id %>/colors">
-<p>Active colors</p>
-<input type="checkbox" id="switch" /><label for="switch">Toggle</label>
-
+<p>Colors text:</p>
+<input title="This text well be shown in the head of color box" placeholder="Colors Box header text" id="ctext" name="ctext"><br/>
+<ul>
+<li>
+<a>SaveChanges</a>
+</li>
+</ul>
 </form>
 </div>
 <div id="roles"><h1>Roles</h1></div>
