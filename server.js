@@ -43,6 +43,25 @@ app.get("/manage/:gld/:user", async (req, res) => {
   }
   
   });
+app.get("manage/:gld/:user/colors", (req, res) => {
+let guild = req.query.gld;
+  let user = req.query.user;
+    let vguild = client.guilds.get(guild);
+ if(!vguild) {
+  res.redirect("/")
+  } else {
+  let ug = vguild.members.get(user)
+
+  if(ug.hasPermission("MANAGE_GUILD") || ug.hasPermission("ADMINISTRATOR")) {
+ res.send("done")
+ } else {
+   res.redirect("/")
+
+}
+
+  }
+
+})
 app.listen(port)
 async function getUser(token) {
   const myRes = await fetch("https://discordapp.com/api/users/@me",
