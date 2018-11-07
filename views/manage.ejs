@@ -67,7 +67,10 @@
 <div id="home">
     <p>Welcome to Agentx Dashboard</p>
 </div>
-<div id="colors"><p>Colors</p></div>
+<div id="colors">
+<h1>Colors</h1>
+<h2><%= guild.name%> has <%= client.guilds.get(guild.id).roles.filter(r => !isNaN(r.name)).size%> color</h2>
+</div>
 <div id="roles"><p>Roles</p></div>
 </div>
         </div>
