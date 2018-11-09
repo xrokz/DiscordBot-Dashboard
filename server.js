@@ -9,26 +9,7 @@ var i = 0;
 
 const app = express();
 
-import LocalStorageParser from 'local-storage-parser';
 
-const lsParser = new LocalStorageParser('xp');
-
-lsParser.set({
-    timestamp: Date.now(),
-    active: false
-});
-//x
-console.info(lsParser.get());
-
-lsParser.set({
-    active: true
-});
-
-console.info(lsParser.get());
-
-lsParser.remove();
-
-console.info(lsParser.get());
 app.set('view engine', 'ejs')
 
 const CLIENT_ID = process.env.CLIENT_ID; // your bot's ID !
