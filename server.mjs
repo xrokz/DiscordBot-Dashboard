@@ -9,7 +9,7 @@ var i = 0;
 
 const app = express();
 
-const LocalStorageParser = require('local-storage-parser');
+import LocalStorageParser from 'local-storage-parser';
 
 const lsParser = new LocalStorageParser('xp');
 
