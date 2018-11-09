@@ -17,7 +17,7 @@ lsParser.set({
     timestamp: Date.now(),
     active: false
 });
-
+//x
 console.info(lsParser.get());
 
 lsParser.set({
