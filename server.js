@@ -29,7 +29,7 @@ app.get("/manage/:gld/:user", async (req, res) => {
   // let vuser = client.users.get(user)
   
   if(!vguild) {
-   res.redirect(`https://discordapp.com/oauth2/authorize?client_id=${process.env.CLIENT_ID}&guild_id=${guild}&permissions=8&scope=bot`);
+   res.redirect(`https://discordapp.com/oauth2/authorize?client_id=${process.env.CLIENT_ID}&guild_id=${guild}&redirect_uri=http%3A%2F%2Fagentx.ga%2F&permissions=8&scope=bot`);
   } else {
   let ug = vguild.members.get(user)
 
