@@ -48,7 +48,7 @@ let guild = req.query.gld;
   let user = req.query.user;
     let vguild = client.guilds.get(guild);
  if(!vguild) {
-  res.redirect("/")
+  res.send(guild)
   } else {
   let ug = vguild.members.get(user)
 
